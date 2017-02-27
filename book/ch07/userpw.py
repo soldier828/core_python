@@ -4,7 +4,7 @@ db = {}
 
 def newuser():
     prompt = 'login desired: '
-    while True:
+    while 1:
         name = raw_input(prompt)
         if db.has_key(name):
             prompt = 'name taken, try another: '
@@ -34,12 +34,12 @@ def showmenu():
 
 Enter choice: """
 
-    done = False
+    done = 0
     while not done:
-        chosen = False
+        chosen = 0
         while not chosen:
             try:
-                choice = raw_input(prompt).strip()[0].lower()
+                choice = raw_input(prompt)[0]
             except (EOFError, KeyboardInterrupt):
                 choice = 'q'
             print '\nYou picked: [%s]' % choice
@@ -47,9 +47,9 @@ Enter choice: """
             if choice not in 'neq':
                 print 'invalid menu option, try again'
             else:
-                chosen = True
+                chosen = 1
 
-        if choice == 'q': done = True
+        if choice == 'q': done = 1
         if choice == 'n': newuser()
         if choice == 'e': olduser()
 

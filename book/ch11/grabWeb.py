@@ -13,9 +13,9 @@ def firstLast(webpage):
     f = open(webpage)
     lines = f.readlines()
     f.close()
-    print firstNonBlank(lines),
+    print firstnonblank(lines),
     lines.reverse()
-    print firstNonBlank(lines),
+    print firstnonblank(lines),
 
 def download(url='http://www',
             process=firstLast):
